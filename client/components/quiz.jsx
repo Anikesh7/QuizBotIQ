@@ -65,32 +65,32 @@ const quiz = ({data, selectedAnswers, topic}) => {
 
     return (
         <>
-            <div class='flex justify-center mt-10'>
+            <div className='flex justify-center mt-10'>
                 <h1>{topic}</h1>
             </div>
             <div>
                 {/* <h1>{props.title}</h1> */}
-                <div class='mx-15 my-10 shadow-lg p-7'>
-                    <p class='float-right ml-6'>{currentQuestion + 1}/{questionNumber} questions</p>
-                    <p class='text-xl'>Q.{currentQuestion + 1} <span class='ml-3'>{data[currentQuestion].question}</span></p>
+                <div className='mx-15 my-10 shadow-lg p-7'>
+                    <p className='float-right ml-6'>{currentQuestion + 1}/{questionNumber} questions</p>
+                    <p className='text-xl'>Q.{currentQuestion + 1} <span className='ml-3'>{data[currentQuestion].question}</span></p>
                     <div >
                         {Object.keys(currentAnswer).map((answer, index) => {
                             if (currentAnswer[answer] !== null) {
                                 return (
-                                    <div key={index} onClick={(el) => updateScore(answer, index)} class={activeDiv(index)}>
-                                        <div class='py-2 px-4 bg-cyan-400 rounded-2xl'>
+                                    <div key={index} onClick={(el) => updateScore(answer, index)} className={activeDiv(index)}>
+                                        <div className='py-2 px-4 bg-cyan-400 rounded-2xl'>
                                             <p>{index + 1}</p>
                                         </div>
-                                        <div class='ml-6'>{currentAnswer[answer].text}</div>
+                                        <div className='ml-6'>{currentAnswer[answer].text}</div>
                                     </div>
                                 )
                             }
                         })}
                     </div>
-                    <div class='flex justify-center mt-10'>
-                        <button onClick={onPrevious} class='mx-4 p-3 bg-green-400 rounded-lg border hover:bg-white hover:border-green-500 hover:text-green-500 delay-100'>Previous</button>
-                        <button onClick={onNext} class='mx-4 p-3 bg-green-400 rounded-lg border hover:bg-white hover:border-green-500 hover:text-green-500 delay-100'>Next</button>
-                        <button onClick={submit} class='mx-4 p-3 bg-amber-500 rounded-lg border text-white hover:bg-white hover:border-amber-500 hover:text-amber-500 delay-100'>Submit</button>
+                    <div className='flex justify-center mt-10'>
+                        <button onClick={onPrevious} className='mx-4 p-3 bg-green-400 rounded-lg border hover:bg-white hover:border-green-500 hover:text-green-500 delay-100'>Previous</button>
+                        <button onClick={onNext} className='mx-4 p-3 bg-green-400 rounded-lg border hover:bg-white hover:border-green-500 hover:text-green-500 delay-100'>Next</button>
+                        <button onClick={submit} className='mx-4 p-3 bg-amber-500 rounded-lg border text-white hover:bg-white hover:border-amber-500 hover:text-amber-500 delay-100'>Submit</button>
                     </div>
                 </div>
             </div>

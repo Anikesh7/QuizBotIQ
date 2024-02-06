@@ -9,6 +9,13 @@ require('dotenv').config();
 const app = express()
 app.use(cors())
 
+// mongoose.connect(process.env.MONGODB_URL,{
+//     useUnifiedTopology: true,
+//     useNewUrlParser: true,
+// })
+// .then(()=> console.log("Connected to database"))
+// .catch(e => console.log(e))
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
