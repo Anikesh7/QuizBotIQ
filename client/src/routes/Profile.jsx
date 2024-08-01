@@ -12,7 +12,7 @@ const Profile = () => {
     });
     async function data() {
         const e = localStorage.getItem('loggedInEmail')
-        const url = `http://localhost:4000/user/profile?email=${e}`;
+        const url = `${import.meta.env.VITE_API_URL}user/profile?email=${e}`;
         const headers = {
             headers: {
                 'Authorization': localStorage.getItem('token')
