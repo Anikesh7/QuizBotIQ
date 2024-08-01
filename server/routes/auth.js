@@ -26,7 +26,7 @@ const {signupValidation, loginValidation} = require('../middleware/AuthValidatio
 //     region: bucketRegion
 // })
 
-router.post('/signup', signupValidation, upload.single('image'), async (req, res) => {
+router.post('/signup', signupValidation, async (req, res) => {
     try {
         const user = await User.findOne({ email: req.body.email.toLowerCase() });
         if (user) {
