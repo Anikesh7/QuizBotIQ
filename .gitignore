@@ -12,3 +12,31 @@ npm-debug.log
 build/
 dist/
 client/.parcel-cache
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Backup files
+*.tfstate.backup
+
+# Terraform workspace files
+.terraform/
+
+# Environment-specific files
+terraform.tfvars
+*.tfvars
+
+# Local override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Auto-generated files
+.terraform.rc
+.terraform.tfstate.d/
+
+# Logs
+*.log
+
+demokey.pem
