@@ -44,6 +44,10 @@ function Submit({ final, topic }) {
                     {/* <button onClick={again} class='mx-6 bg-green-400 border hover:bg-white hover:border-green-500 hover:text-green-500 rounded-lg p-3 delay-100'>Try Again</button> */}
                     <button onClick={change} class='mx-6 bg-green-400 border hover:bg-white hover:border-green-500 hover:text-green-500 rounded-lg p-3 delay-100'>Change Topic</button>
                 </div>
+                <div class='mt-10'>
+                    {/* <button onClick={again} class='mx-6 bg-green-400 border hover:bg-white hover:border-green-500 hover:text-green-500 rounded-lg p-3 delay-100'>Try Again</button> */}
+                    <button onClick={()=> navigate('/profile')} class='mx-6 bg-green-400 border hover:bg-white hover:border-green-500 hover:text-green-500 rounded-lg p-3 delay-100'>Check Previous Scores</button>
+                </div>
             </div>
         </>
     )
