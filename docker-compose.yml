@@ -1,0 +1,22 @@
+version: '3'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - "8080:8080"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+
+  express:
+    build: ./server/
+    ports:
+      - "4000:4000"
+
+  react:
+    build: ./client/
+    ports:
+      - "80:80"
+
+volumes:
+  jenkins_home:
+    external: true
