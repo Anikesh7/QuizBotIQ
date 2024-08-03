@@ -15,7 +15,7 @@ function Submit({ final, topic }) {
     let score = {correct : final, total : 10, topic : topic, date : newDate};
     async function updateScore() {
         const e = localStorage.getItem('loggedInEmail')
-        const url = `${import.meta.env.VITE_API_URL}:4000/user/updateScore?email=${e}`;
+        const url = `${import.meta.env.VITE_API_URL}user/updateScore?email=${e}`;
         
         const response = await fetch(url, {
             method: "PUT",

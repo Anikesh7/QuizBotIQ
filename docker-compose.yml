@@ -13,5 +13,3 @@ services:
     build: ./client/
     ports:
       - "80:80"
-    environment:
-    - VITE_API_URL=${VITE_API_URL}

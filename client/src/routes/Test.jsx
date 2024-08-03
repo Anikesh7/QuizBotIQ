@@ -23,7 +23,7 @@ function Test({ final, topic }) {
     // To get the data from api
     async function gameData() {
         try {
-            const url = `${import.meta.env.VITE_API_URL}:4000/quiz?topic=${topic}`;
+            const url = `${import.meta.env.VITE_API_URL}quiz?topic=${topic}`;
             const headers = {
                 headers: {
                     'Authorization': localStorage.getItem('token')
