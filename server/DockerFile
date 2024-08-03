@@ -1,7 +1,4 @@
 FROM node
-ENV MONGODB_URL="mongodb+srv://Anikesh:Anikesh1234@cluster0.6tvlcyt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-ENV SECRET="placement"
-ENV API_KEY="AIzaSyDJG1rp8beNlAhMGO1eKhBpLFWxHWHv5CY"
 COPY . .
 RUN npm install
 EXPOSE 4000
