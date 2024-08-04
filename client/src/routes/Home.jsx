@@ -14,11 +14,11 @@ function Home({ setTopic }) {
       <Navbar />
       <div class='py-36 px-20 flex justify-center bg-gray-800'>
         <div>
-          <h1 class='text-white font-semibold text-5xl'>Animesh MADARCHOD</h1>
+          <h1 class='text-white font-semibold text-5xl'>The QuizAPI includes a wide number of questions</h1>
         </div>
         <div>
           <p class="mt-4 text-lg text-gray-100">
-            Sala Harami
+          Test your knowledge or easily embed a quiz on your website with the Quiz API
           </p>
         </div>
       </div>
