@@ -82,7 +82,7 @@ function Signup() {
             />
           </div>
           <div className="mb-4">
-            <label className="block mb-2 text-sm font-bold text-gray-700">Phone (optional)</label>
+            <label className="block mb-2 text-sm font-bold text-gray-700">Phone</label>
             <input
               type="text"
               name="phone"
