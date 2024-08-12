@@ -2,7 +2,6 @@ services:
 
   express:
     build: ./server/
-    image: express:latest
     ports:
       - "4000:4000"
     environment:
@@ -12,6 +11,5 @@ services:
 
   react:
     build: ./client/
-    image: react:latest
     ports:
       - "80:80"
