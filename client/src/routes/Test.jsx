@@ -17,6 +17,7 @@ function Test({ final, topic }) {
     const [userAnswer, setUserAnswer] = useState();
     const navigate = useNavigate();
     const location = useLocation();
+    const [loading, setLoading] = useState(true);
     // to stop running currentQuestion useEffect first time
     const effectRan = useRef(false);
 
@@ -33,6 +34,7 @@ function Test({ final, topic }) {
             const data = await response.json();
             setCurrentGame(data);
             setCurrentAnswer(data[currentQuestion].options);
+            setLoading(false);
             //setCorrectAnswer(data[currentQuestion].correct_answer_index);
             effectRan.current = true;
         } catch (error) {
@@ -94,13 +96,22 @@ function Test({ final, topic }) {
     // To store the current score in the final state to be passed to the submit page
     function submit() {
         let score = 0;
-        for(let i=0;i<10;i++){
-            if(selectedAnswers[i]==currentGame[i].correct_answer_index){
-                  score+=1;
+        for (let i = 0; i < 10; i++) {
+            if (selectedAnswers[i] == currentGame[i].correct_answer_index) {
+                score += 1;
             }
         }
         final(score);
         navigate('/submit');
+    }
+
+    if (loading) {
+        return (
+            <div className="flex flex-col justify-center items-center h-screen">
+                <div className="text-3xl font-bold">Loading...</div>
+                <div className="text-xl mt-4">Usually it takes 4-8 seconds</div>
+            </div>
+        )
     }
     return (
         <>
