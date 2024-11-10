@@ -3,6 +3,11 @@ resource "aws_instance" "server" {
   instance_type = "t2.medium"
   key_name = "demokey"
 
+  root_block_device {
+    volume_size = 12              
+    volume_type = "gp3"  
+  }
+
   tags = {
     Name = "Server"
   }
