@@ -33,7 +33,7 @@ router.get('/', ensureAuthenticated, async (req, res) => {
     // })
 
     
-    const prompt = `give me 10 mcq questions on ${req.query.topic} in strict json format in which there should be 4 fields, 1st field for question id, 2nd field for question, 3rd field for options(there should be four options) in key value pair like {asnwer_a: answer,asnwer_b:answer} and 4th field for correct answer index(0 based indexing)`;
+    const prompt = `give me 10 mcq questions on ${req.query.topic} in strict json format in which there should be 4 fields, 1st field for question id, 2nd field for question, 3rd field for options(there should be four options) in key value pair like {asnwer_a: answer,asnwer_b:answer} and 4th field for correct answer index(0 based indexing), return only json`;
 
 
     // client
@@ -55,7 +55,8 @@ router.get('/', ensureAuthenticated, async (req, res) => {
     const result = await model.generateContent(prompt);
     let response = await result.response;
     response = response.text();
-    const str = _.trim(response,'"```json');
+    response = response.slice(0,-1);
+    const str = _.trim(response,'```json');
     //const text = JSON.parse(str);
     //console.log(str);
     return res.status(200).send(str);
